@@ -9,12 +9,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import co.presenca.alunos.Aluno;
 import co.presenca.alunos.R;
+import co.presenca.alunos.data.DataSource;
 
 public class myAdpater extends RecyclerView.Adapter<myAdpater.myViewHolder> {
 
-    ArrayList<String> nomes = new ArrayList<String>();
+    ArrayList<String> alunos = new ArrayList<>();
 
 
     @NonNull
@@ -30,7 +33,8 @@ public class myAdpater extends RecyclerView.Adapter<myAdpater.myViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
-        holder.textView.setText(nomes.get(position));
+
+        holder.textView.setText(alunos.get(position));
     }
 
     @Override
@@ -38,11 +42,6 @@ public class myAdpater extends RecyclerView.Adapter<myAdpater.myViewHolder> {
         return 0;
     }
 
-    public void setNomes(ArrayList<String> nomes){
-        this.nomes = nomes;
-        notifyDataSetChanged();
-
-    }
 
     public class myViewHolder extends RecyclerView.ViewHolder {
         private final TextView textView;
@@ -54,6 +53,7 @@ public class myAdpater extends RecyclerView.Adapter<myAdpater.myViewHolder> {
 
         }
 
+        }
+
     }
 
-}
